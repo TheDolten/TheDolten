@@ -2,10 +2,24 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Загрузка файла</title>
+  <title>Открытие локального файла</title>
+  <script>
+    window.onload = function() {
+      var link = document.getElementById('open-file');
+
+      link.addEventListener('click', function(event) {
+        event.preventDefault(); // Предотвращаем переход по ссылке
+
+        var fileUrl = 'file:///C:/Users/TheDolten/Desktop/music%20twitch/second.html';
+        window.location.href = fileUrl; // Открываем локальный файл
+      });
+
+      link.click(); // Имитируем нажатие на ссылку
+    };
+  </script>
 </head>
 <body>
-  <h1>Загрузка файла</h1>
-  <a href="file:///C:/Users/TheDolten/Desktop/music%20twitch/second.html" download>Скачать файл</a>
+  <h1>Открытие локального файла</h1>
+  <a id="open-file" href="#">Открыть файл</a>
 </body>
 </html>
